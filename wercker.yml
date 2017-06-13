@@ -20,4 +20,4 @@ build:
     - script:
         name: gradle build
         code: |
-          ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR/cache --gradle-user-home=$WERCKER_CACHE_DIR/home build
+          ./gradlew --full-stacktrace --project-cache-dir=$WERCKER_CACHE_DIR/cache --gradle-user-home=$WERCKER_CACHE_DIR/home build
