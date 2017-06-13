@@ -1,5 +1,8 @@
 # docker box definition
-box: java
+box:
+  id: java
+  ports:
+    - "8080"
 
 # defining the dev pipeline
 dev:
@@ -7,7 +10,7 @@ dev:
     - script:
       name: gradle bootRun
       code: |
-        ./gradlew bootRun
+        ./gradlew --project-cache-dir=./gradlecache/cache --gradle-user-home=./gradlecache/home bootRun 
 
 # Build definition
 build:
@@ -17,4 +20,4 @@ build:
     - script:
         name: gradle build
         code: |
-          ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
+          ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR/cache --gradle-user-home=$WERCKER_CACHE_DIR/home build
