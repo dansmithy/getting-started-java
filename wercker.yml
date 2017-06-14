@@ -21,4 +21,3 @@ build:
         name: gradle build
         code: |
           ./gradlew --full-stacktrace --project-cache-dir=$WERCKER_CACHE_DIR/cache --gradle-user-home=$WERCKER_CACHE_DIR/home build
-    - internal/store-container
