@@ -1,0 +1,4 @@
+build/
+gradlecache/
+.wercker/
+.gradle/
